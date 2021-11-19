@@ -104,7 +104,6 @@ title: 'Proteins Involved in Cellular Senescence'
 	?proteinLink wdt:P703 wd:Q15978631.
 	 VALUES ?goBioprocess {${type}}.
   	?proteinLink wdt:P682 ?goBioprocess.
-
   	VALUES ?goLocation {${location}}.
   	?proteinLink wdt:P681 ?goLocation.
 	SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
@@ -114,10 +113,10 @@ title: 'Proteins Involved in Cellular Senescence'
         const results = await response.json()
         const proteinList = wdk.simplify.sparqlResults(results)
         proteinList.forEach(function(protein) {
-            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');​
+            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
         });
     });
 </script>
 </body>
 </html>
-</html>
+
