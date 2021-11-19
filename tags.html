@@ -19,7 +19,7 @@ title: 'Proteins Involved in Cellular Senescence'
 <h1 class="label header">Here you can search for the proteins!</h1>
 	
 <p>
- <table class="comicWhite">
+ <table class="comicGreen">
     <tbody>
     <tr>
     <td>Choose a location in the cell:</td>
@@ -98,15 +98,15 @@ title: 'Proteins Involved in Cellular Senescence'
         $("#list_of_proteins").empty();
         const location = $('#locations').val();
         const type = $('#type').val();
-        const wdquery = `SELECT ?proteinLabel
+        const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
 	 WHERE {
-	?protein wdt:P31 wd:Q8054.
-	?protein wdt:P703 wd:Q15978631.
+	?proteinLink wdt:P31 wd:Q8054.
+	?proteinLink wdt:P703 wd:Q15978631.
 	 VALUES ?goBioprocess {${type}}.
-  	?protein wdt:P682 ?goBioprocess.
+  	?proteinLink wdt:P682 ?goBioprocess.
 
   	VALUES ?goLocation {${location}}.
-  	?protein wdt:P681 ?goLocation.
+  	?proteinLink wdt:P681 ?goLocation.
 	SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
 	}`;
         const url = wdk.sparqlQuery(wdquery)
@@ -114,7 +114,7 @@ title: 'Proteins Involved in Cellular Senescence'
         const results = await response.json()
         const proteinList = wdk.simplify.sparqlResults(results)
         proteinList.forEach(function(protein) {
-            $("#list_of_proteins").append($("<li>").text(protein.proteinLabel));
+            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');​
         });
     });
 </script>
