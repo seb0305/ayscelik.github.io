@@ -1,3 +1,7 @@
+---
+layout: page
+title: 'Proteins Involved in Cellular Senescence'
+---
 <!DOCTYPE html>
 <html lang="en">
 <head>
@@ -7,11 +11,12 @@
     <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
     <!-- Initialize a global wdk object using the WBK object -->
     <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+    <link rel="stylesheet" href="mystyle.css">
 </head>
-
+	
 <body>
-<h1>Proteins involved in cellular senescence</h1>
-
+<h1 class="label header">Here you can search for the proteins!</h1>
+	
 <p>
 
 <!-- Drop down menu for choosing a location-->
@@ -23,8 +28,8 @@
         <option value="wd:Q79899">cytoplasm</option>
         <option value="wd:Q220599">cytosol</option>
         <option value="wd:Q14349455">membrane</option>
-	    <option value="wd:Q79927">endoplasmic reticulum</option>
-	    <option value="wd:Q83181">Golgi apparatus</option>
+	<option value="wd:Q79927">endoplasmic reticulum</option>
+	<option value="wd:Q83181">Golgi apparatus</option>
     </select>
     <p>
         <img id="wd:Q40260" src=Pictures/NucleusLabel.jpg alt="NucleusInCell" width="658" height="525">
@@ -61,23 +66,28 @@
         var imgId = $("#locations").val();
         document.getElementById(imgId).style.display='block';
     });
-</script>
-<!-- Selection for positive or negative regulation-->
-    <label for="type">Type of regulation in cellular senescence:</label>
-
-    <select name="type" id="type">
+    </select>
+    </td>
+    </tr>
+    <tr>
+    <td>Type of regulation in cellular senescence:</td>
+    <td>
+        <select class="label success"name="type" id="type">
         <option value="wd:Q14907008">positive</option>
         <option value="wd:Q14906419">negative</option>
     </select>
+    </td>
+    </tr>
+    </tbody>
+    </table>
+
     <p>
-    <input id="submit" type="button" value="List Proteins">
+    <input id="submit" type="button" class="label info" value="List Proteins">
 </div>
 
 <div>
     <ol id="list_of_proteins">
     </ol>
-
-<!-- SPARQL query and button to show proteins in a numbered list-->
 </div>
 <script>
     $("#submit").click(async function() {
@@ -105,4 +115,5 @@
     });
 </script>
 </body>
+</html>
 </html>
