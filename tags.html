@@ -12,17 +12,18 @@ title: 'Proteins Involved in Cellular Senescence'
     <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
     <!-- Initialize a global wdk object using the WBK object -->
     <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
-    <link rel="stylesheet" href="mystyle.css">
+    <link rel="stylesheet" href="/assets/css/mystyle.css">
 </head>
 	
 <body>
 <h1 class="label header">Here you can search for the proteins!</h1>
 	
 <p>
-
-<!-- Drop down menu for choosing a location-->
-<div>
-    <label for="locations">Choose a location in the cell:</label>
+ <table class="comicGreen">
+    <tbody>
+    <tr>
+    <td>Choose a location in the cell:</td>
+    <td>    
     <select name="locations" id="locations">
         <option value="wd:Q40260">nucleus</option>
         <option value="wd:Q39572">mitochondrion</option>
@@ -67,8 +68,8 @@ title: 'Proteins Involved in Cellular Senescence'
         var imgId = $("#locations").val();
         document.getElementById(imgId).style.display='block';
     });
-	</script>
- 
+</script>
+
     </td>
     </tr>
     <tr>
