@@ -2,39 +2,38 @@
 layout: page
 title: 'Proteins Involved in Cellular Senescence'
 ---
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <title>Proteins involved in cellular senescence</title>
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
-    <!-- Initialize a global WBK function -->
-    <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
-    <!-- Initialize a global wdk object using the WBK object -->
-    <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
-    <link rel="stylesheet" href="/assets/css/mystyle.css">
+  <title>Proteins involved in cellular senescence</title>
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- Initialize a global WBK function -->
+  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikibase-sdk.min.js"></script>
+  <!-- Initialize a global wdk object using the WBK object -->
+  <script src="https://cdn.rawgit.com/maxlath/wikidata-sdk/dist/dist/wikidata-sdk.min.js"></script>
+  <!-- Link to external style sheet -->
+  <link rel="stylesheet" href="/assets/css/mystyle.css">
 </head>
 	
 <body>
-<h1 class="label header">Here you can search for the proteins!</h1>
-	
-<p>
- <table class="comicGreen">
+  <h1 class="label header">Here you can search for the proteins!</h1>	
+  <p>
+  <table class="comicGreen">
     <tbody>
-    <tr>
-    <td>Choose a location in the cell:</td>
-    <td>    
-    <select name="locations" id="locations">
-	<option value="null">select</option>
-        <option value="wd:Q40260">nucleus</option>
-        <option value="wd:Q39572">mitochondrion</option>
-        <option value="wd:Q79899">cytoplasm</option>
-        <option value="wd:Q220599">cytosol</option>
-        <option value="wd:Q14349455">membrane</option>
-	<option value="wd:Q79927">endoplasmic reticulum</option>
-	<option value="wd:Q83181">Golgi apparatus</option>
-    </select>
-    <p>
+      <tr>
+      <td>Choose a location in the cell:</td>
+      <td>    
+        <select name="locations" id="locations">
+          <option value="null">select</option>
+          <option value="wd:Q40260">nucleus</option>
+          <option value="wd:Q39572">mitochondrion</option>
+          <option value="wd:Q79899">cytoplasm</option>
+          <option value="wd:Q220599">cytosol</option>
+          <option value="wd:Q14349455">membrane</option>
+          <option value="wd:Q79927">endoplasmic reticulum</option>
+          <option value="wd:Q83181">Golgi apparatus</option>
+        </select>
+        <p>
         <img id="wd:Q40260" src="/assets/Pictures/NucleusLabel.jpg" alt="NucleusInCell">
         <img id="wd:Q39572" src="/assets/Pictures/MitochondriaLabel.jpg" alt="MitochondriaInCell">
         <img id="wd:Q79899" src="/assets/Pictures/CytoplasmLabel.jpg" alt="CytoplasmInCell">
@@ -42,82 +41,76 @@ title: 'Proteins Involved in Cellular Senescence'
         <img id="wd:Q14349455" src="/assets/Pictures/MembraneLabel.jpg" alt="MembraneInCell">
         <img id="wd:Q79927" src="/assets/Pictures/ERLabel.jpg" alt="ERInCell" >
         <img id="wd:Q83181" src="/assets/Pictures/GolgiLabel.jpg" alt="GolgiInCell">
-    <p>
-
-<script>
-
-// Hide all the images.
-    document.getElementById("wd:Q40260").style.display='none';
-    document.getElementById("wd:Q39572").style.display='none';
-    document.getElementById("wd:Q79899").style.display='none';
-    document.getElementById("wd:Q220599").style.display='none';
-    document.getElementById("wd:Q14349455").style.display='none';
-    document.getElementById("wd:Q79927").style.display='none';
-    document.getElementById("wd:Q83181").style.display='none';
-
-// Hide all images again, then reveal ONLY the location chosen from the drop-down menu
-    $("#locations").change(function(){
-
-        document.getElementById("wd:Q40260").style.display='none';
-        document.getElementById("wd:Q39572").style.display='none';
-        document.getElementById("wd:Q79899").style.display='none';
-        document.getElementById("wd:Q220599").style.display='none';
-        document.getElementById("wd:Q14349455").style.display='none';
-        document.getElementById("wd:Q79927").style.display='none';
-        document.getElementById("wd:Q83181").style.display='none';
-
-        var imgId = $("#locations").val();
-        document.getElementById(imgId).style.display='block';
-    });
-</script>
-
-    </td>
-    </tr>
-    <tr>
-    <td>Type of regulation in cellular senescence:</td>
-    <td>
+        <p>	    
+        <script>	
+          // Hide all the images.
+          document.getElementById("wd:Q40260").style.display='none';
+          document.getElementById("wd:Q39572").style.display='none';
+          document.getElementById("wd:Q79899").style.display='none';
+          document.getElementById("wd:Q220599").style.display='none';
+          document.getElementById("wd:Q14349455").style.display='none';
+          document.getElementById("wd:Q79927").style.display='none';
+          document.getElementById("wd:Q83181").style.display='none';
+          // Hide all images again, then reveal ONLY the location chosen from the drop-down menu
+          $("#locations").change(function(){
+            document.getElementById("wd:Q40260").style.display='none';
+            document.getElementById("wd:Q39572").style.display='none';
+            document.getElementById("wd:Q79899").style.display='none';
+            document.getElementById("wd:Q220599").style.display='none';
+            document.getElementById("wd:Q14349455").style.display='none';
+            document.getElementById("wd:Q79927").style.display='none';
+            document.getElementById("wd:Q83181").style.display='none';
+	    var imgId = $("#locations").val();
+            document.getElementById(imgId).style.display='block';
+          });
+        </script>
+      </td>
+      </tr>    
+      <tr>
+      <td>Type of regulation in cellular senescence:</td>
+      <td>
         <select class="label success"name="type" id="type">
-        <option value="wd:Q14907008">positive</option>
-        <option value="wd:Q14906419">negative</option>
-    </select>
-    </td>
-    </tr>
+          <option value="wd:Q14907008">positive</option>
+          <option value="wd:Q14906419">negative</option>
+        </select>
+      </td>
+      </tr>   
     </tbody>
-    </table>
+  </table>
 
-    <p>
+  <p>
     <input id="submit" type="button" class="label info" value="List Proteins">
-    </p>
-</div>
+  </p>
 
-<div>
+  <div>
     <ol id="list_of_proteins">
     </ol>
-</div>
-<script>
+  </div>
+	
+  <script>
     $("#submit").click(async function() {
-        $("#list_of_proteins").empty();
-        const location = $('#locations').val();
-        const type = $('#type').val();
-        const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
-	 WHERE {
-	?proteinLink wdt:P31 wd:Q8054.
-	?proteinLink wdt:P703 wd:Q15978631.
-	 VALUES ?goBioprocess {${type}}.
-  	?proteinLink wdt:P682 ?goBioprocess.
-  	VALUES ?goLocation {${location}}.
-  	?proteinLink wdt:P681 ?goLocation.
-	SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
-	}`;
-        const url = wdk.sparqlQuery(wdquery)
-        const response = await fetch(url)
-        const results = await response.json()
-        const proteinList = wdk.simplify.sparqlResults(results)
-        proteinList.forEach(function(protein) {
-            $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
-        });
+      $("#list_of_proteins").empty();
+      const location = $('#locations').val();
+      const type = $('#type').val();
+      const wdquery = `SELECT ?proteinLink ?proteinLinkLabel
+      WHERE {
+      ?proteinLink wdt:P31 wd:Q8054.
+      ?proteinLink wdt:P703 wd:Q15978631.
+      VALUES ?goBioprocess {${type}}.
+      ?proteinLink wdt:P682 ?goBioprocess.
+      VALUES ?goLocation {${location}}.
+      ?proteinLink wdt:P681 ?goLocation.
+      SERVICE wikibase:label { bd:serviceParam wikibase:language "[AUTO_LANGUAGE],en". }
+      }`;
+      const url = wdk.sparqlQuery(wdquery)
+      const response = await fetch(url)
+      const results = await response.json()
+      const proteinList = wdk.simplify.sparqlResults(results)
+      proteinList.forEach(function(protein) {
+        $("#list_of_proteins").append('<li><a target="_blank" href="https://wikidata.org/wiki/'+protein.proteinLink.value+'">'+protein.proteinLink.label+'</a></li>');
+      });
     });
-</script>
+  </script>
+	
 </body>
 </html>
-
